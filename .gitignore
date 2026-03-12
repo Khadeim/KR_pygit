@@ -1,0 +1,14 @@
+#Ignore files that should not be tracked by git
+# Python virtual environment
+.venv/
+
+# Python cache files
+__pycache__/
+*.pyc
+
+# Pytest cache
+.pytest_cache/
+
+# vscode settings
+.vscode/
+*.swp
