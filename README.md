@@ -1,6 +1,6 @@
 # PyGit
 
-A small scale git like system implemented in Python by Khadeim Rahman. This project was designed to learn and showcase Python, SQL, and Docker skills in building a real backend system.
+A small scale git like system implemented in Python by Khadeim Rahman. This project was designed to learn, showcase and test programming skills in building a real backend system.
 
 ---
 
