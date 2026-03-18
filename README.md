@@ -23,3 +23,4 @@ A small scale git like system implemented in Python by Khadeim Rahman. This proj
 - Commit history
 - Hashing
 - File staging
+- Version control
