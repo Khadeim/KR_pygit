@@ -1,6 +1,8 @@
 import os
 import json
 import sys
+import hashlib
+import time
 
 PYGIT_DIR = ".pygit"
 CONFIG_FILE = "config.json"
@@ -43,6 +45,24 @@ def save_index(index):
     """Save staged files to the index."""
     with open(os.path.join(PYGIT_DIR, INDEX_FILE), "w") as f:
         json.dump(index, f, indent=4)
+
+def hash_file(filepath):
+    """Generate SHA-1 hash of a file."""
+    with open(filepath, "rb") as f:
+        content = f.read()
+    return hashlib.sha1(content).hexdigest(), content
+
+def store_object(content):
+    """Store fil content as an object using its hash."""
+
+    hash_id = hashlib.sha1(content).hexdigest()
+    path = os.path.join(PYGIT_DIR, "objects", hash_id)
+
+    if not os.path.exists(path):
+        with open(path, "wb") as f:
+            f.write(content)
+
+    return hash_id
 
 def add_files(files):
     """Stage files for commit."""
